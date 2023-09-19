@@ -1,0 +1,62 @@
+{
+    "name": "codebuglab/laravel-goalserve",
+    "description": "Simple integration with Goalserve API for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Elkomy",
+            "email": "mo.ah.elkomy@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.2.0",
+        "illuminate/support": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeBugLab\\GoalServe\\": "src/"
+        }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^8.8",
+        "pestphp/pest": "^2.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeBugLab\\GoalServe\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodeBugLab\\GoalServe\\GoalServeServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --colors --testdox",
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "keywords": [
+        "goalserve",
+        "football",
+        "soccer",
+        "sports",
+        "bookmakers",
+        "odds",
+        "betting",
+        "api",
+        "laravel",
+        "php"
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
