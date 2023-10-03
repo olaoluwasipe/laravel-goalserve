@@ -21,7 +21,9 @@ class ApiGenerator implements ApiGeneratorInterface
 
     public function api($path)
     {
-        $this->url = $this->apiUrl . $this->apiKey . "/" . $path . "?json=1";
+        $suffix = strpos($path, '_json') !== false ? '' : '?json=1';
+
+        $this->url = $this->apiUrl . $this->apiKey . '/' . $path . $suffix;
     }
 
     public function filter(ApiFilter $apiFilter)

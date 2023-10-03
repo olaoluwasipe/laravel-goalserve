@@ -29,7 +29,7 @@ it('can get right soccer stats team url', function () {
 
 it('can get right soccer stats players url', function () {
     $players = GoalServe::soccerStats()->players()->url();
-    expect($players)->toBe("https://www.goalserve.com/getfeed/" . config('goalserve.api_key') . "/soccerstats/player/players_" . config('goalserve.api_language') . "?json=1");
+    expect($players)->toBe("https://www.goalserve.com/getfeed/" . config('goalserve.api_key') . "/soccerstats/player/players_" . config('goalserve.api_language') . "_json");
 });
 
 it('can get right soccer stats player updated list url', function () {

@@ -45,11 +45,11 @@ class SoccerStatsRepository extends AbstractRepository
     }
 
     /**
-     * @link https://www.goalserve.com/getfeed/---------/soccerstats/player/players_ar
+     * @link https://www.goalserve.com/getfeed/---------/soccerstats/player/players_ar_json
      */
     public function players(): self
     {
-        $this->apiGenerator->api("{$this->mainPage}/player/players_" . config('goalserve.api_language'));
+        $this->apiGenerator->api("{$this->mainPage}/player/players_" . config('goalserve.api_language') . "_json");
         return $this;
     }
 
