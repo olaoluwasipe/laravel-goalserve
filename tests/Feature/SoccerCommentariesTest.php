@@ -4,12 +4,12 @@ use CodeBugLab\GoalServe\Facades\GoalServe;
 
 it('can get right commentaries league url', function () {
     $url = GoalServe::soccerCommentaries()->league(1204)->url();
-    expect($url)->toBe("https://www.goalserve.com/getfeed/" . config('goalserve.api_key') . "/commentaries/1204?json=1");
+    expect($url)->toBe("https://www.goalserve.com/getfeed/" . config('goalserve.api_key') . "/commentaries/1204.xml?json=1");
 });
 
 it('can get right commentaries league url with date filter', function () {
     $url = GoalServe::soccerCommentaries()->league(1204)->date('18.09.2023')->url();
-    expect($url)->toBe("https://www.goalserve.com/getfeed/" . config('goalserve.api_key') . "/commentaries/1204?json=1&date=18.09.2023");
+    expect($url)->toBe("https://www.goalserve.com/getfeed/" . config('goalserve.api_key') . "/commentaries/1204.xml?json=1&date=18.09.2023");
 });
 
 it('can get right commentaries match url', function () {

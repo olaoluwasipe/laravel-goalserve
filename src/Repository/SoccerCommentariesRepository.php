@@ -13,14 +13,14 @@ class SoccerCommentariesRepository extends AbstractRepository
      */
     public function league(int $leagueId): self
     {
-        $this->apiGenerator->api("{$this->mainPage}/{$leagueId}");
+        $this->apiGenerator->api("{$this->mainPage}/{$leagueId}.xml");
         return $this;
     }
 
     /**
      * @link https://www.goalserve.com/getfeed/---------/commentaries/match?id=2505310&league=1457
      */
-    public function match(int $matchId,int $leagueId): self
+    public function match(int $matchId, int $leagueId): self
     {
         $this->apiGenerator->api("{$this->mainPage}/match?id={$matchId}&league={$leagueId}");
         return $this;
