@@ -30,17 +30,17 @@ class AbstractRepository
         return $this;
     }
 
-    public function get(): array
+    public function get(): ?array
     {
         return $this->response($this->apiGenerator->getUrl());
     }
 
-    public function url() : string
+    public function url(): string
     {
         return $this->apiGenerator->getUrl();
     }
 
-    protected function response($url): array
+    protected function response($url): ?array
     {
         return json_decode(CurlHelper::get($url, $this->getHeaders()), true);
     }
